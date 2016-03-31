@@ -8,7 +8,7 @@ Author URI: https://pixolin.de
 License: GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 Domain Path:  /languages
-Text Domain:  bgs
+Text Domain:  ubs
 
 (c) Bego Mario Garde, 2016
 Scroll to Anchor is free software: you can redistribute it and/or modify
@@ -28,16 +28,22 @@ along with Scroll to Anchor. If not, see https://www.gnu.org/licenses/gpl-2.0.ht
 defined( 'ABSPATH' ) or die( 'Good bye.' );
 
 // retrieve plugin path
-$bgs_plugin_path = plugin_dir_path( __FILE__ );
+$ubs_plugin_path = plugin_dir_path( __FILE__ );
 
 //Localize
-add_action( 'plugins_loaded', 'sta_load_textdomain' );
+add_action( 'plugins_loaded', 'ubs_load_textdomain' );
 
-if ( ! function_exists( 'bgs_load_textdomain' ) ) {
-	function bgs_load_textdomain() {
-		load_plugin_textdomain( 'bgs', false, plugin_basename( dirname( __FILE__ ) ).'/languages' );
+if ( ! function_exists( 'ubs_load_textdomain' ) ) {
+	function ubs_load_textdomain() {
+		load_plugin_textdomain( 'ubs', false, plugin_basename( dirname( __FILE__ ) ).'/languages' );
 	}
 }
 
-require_once $bgs_plugin_path .'/includes/bgs-enqueue-scripts.php'; // Enqueue JS
-require_once $bgs_plugin_path .'/includes/bgs-widget.php'; // Adds Widget
+// Enqueue JS
+require_once $ubs_plugin_path .'/includes/ubs-enqueue-scripts.php';
+
+// Add Widget
+require_once $ubs_plugin_path .'/includes/ubs-widget.php';
+
+// Add Settings
+require_once $ubs_plugin_path . '/settings/ubs-settings.php';

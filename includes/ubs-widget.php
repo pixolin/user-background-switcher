@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Add bgs_widget.
+ * Add ubs_widget.
  */
-class BGS_Widget extends WP_Widget {
+class UBS_Widget extends WP_Widget {
 
 	/**
 	* Register widget with WordPress.
@@ -11,9 +11,9 @@ class BGS_Widget extends WP_Widget {
 	**/
 	function __construct() {
 		parent::__construct(
-			'bgs_widget', // Base ID
-			__( 'Background Switcher', 'bgs' ), // Name
-			array( 'description' => __( 'Let your users select the background color and image', 'bgs' ) ) // Args
+			'ubs_widget', // Base ID
+			__( 'Background Switcher', 'ubs' ), // Name
+			array( 'description' => __( 'Let your users select the background color and image', 'ubs' ) ) // Args
 		);
 	}
 
@@ -34,7 +34,7 @@ class BGS_Widget extends WP_Widget {
 		}
 		echo esc_attr( $instance['textabove'] );
 		?>
-		<div class="bgs-dropdown">
+		<div class="ubs-dropdown">
 			<select id="bgswitcher">
 				<option value="">Default</option>
 				<option value="one">One</option>
@@ -57,12 +57,12 @@ class BGS_Widget extends WP_Widget {
 		if ( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		} else {
-			$title = __( 'Background Switcher', 'bgs' );
+			$title = __( 'Background Switcher', 'ubs' );
 		}
 		if ( isset( $instance['textabove'] ) ) {
 			$textabove = $instance['textabove'];
 		} else {
-			$textabove = __( 'Select background', 'bgs' );
+			$textabove = __( 'Select background', 'ubs' );
 		}
 		?>
 		<p>
@@ -92,4 +92,4 @@ class BGS_Widget extends WP_Widget {
 	}
 }
 
-add_action( 'widgets_init', create_function( '', "register_widget( 'BGS_Widget' );" ) );
+add_action( 'widgets_init', create_function( '', "register_widget( 'UBS_Widget' );" ) );
