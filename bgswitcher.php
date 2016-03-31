@@ -39,5 +39,5 @@ if ( ! function_exists( 'bgs_load_textdomain' ) ) {
 	}
 }
 
-require_once $bgs_plugin_path .'/includes/bgs-enqueue-js.php'; // Enqueue JS
+require_once $bgs_plugin_path .'/includes/bgs-enqueue-scripts.php'; // Enqueue JS
 require_once $bgs_plugin_path .'/includes/bgs-widget.php'; // Adds Widget
