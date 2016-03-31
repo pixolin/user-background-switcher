@@ -47,3 +47,6 @@ require_once $ubs_plugin_path .'/includes/ubs-widget.php';
 
 // Add Settings
 require_once $ubs_plugin_path . '/settings/ubs-settings.php';
+
+// Add Custom Post Type for Background–CSS-Class pairs
+require_once $ubs_plugin_path . '/includes/ubs-background-cpt.php';
